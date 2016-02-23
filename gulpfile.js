@@ -1,21 +1,18 @@
-// Include gulp
+
 var gulp = require('gulp'); 
 
-// Include Our Plugins
 var jshint = require('gulp-jshint');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var mocha = require('gulp-mocha');
 
-// Lint Task
 gulp.task('lint', function() {
     return gulp.src('lib/*.js')
         .pipe(jshint())
         .pipe(jshint.reporter('default'));
 });
 
-// Concatenate & Minify JS
 gulp.task('scripts', function() {
     return gulp.src('lib/*.js')
         .pipe(concat('all.js'))
@@ -25,16 +22,13 @@ gulp.task('scripts', function() {
         .pipe(gulp.dest('dist'));
 });
 
-// Test
 gulp.task('test-local', function() {
     return gulp.src('test.js', {read: false})
         .pipe(mocha());
 });
 
-// Watch Files For Changes
 gulp.task('watch', function() {
     gulp.watch('js/*.js', ['lint', 'scripts']);
 });
 
-// Default Task
 gulp.task('default', ['lint', 'scripts', 'watch']);
