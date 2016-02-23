@@ -1,6 +1,11 @@
 # palidrome-js
 Check if input string is palindrome.
 
+# Installing 
+```js
+sudo npm install
+```
+
 # Usage
 ```js
 var isPalindrome = require('palindrome');
@@ -12,6 +17,5 @@ console.log(isPalindrome('macaco')); // => 'It is not a palindrome'
 
 # Test
 ```js
-npm install -g mocha
-mocha
+gulp test-local
 ```
