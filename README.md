@@ -1,5 +1,5 @@
 # palidrome-js
-Check if input string is palindrome.
+Check if input is palindrome.
 
 # Installing 
 ```js
